@@ -31,8 +31,8 @@ public:
 		uint8_t L = 0x00;
 	};
 
-
-
+	
+	
 
 	uint16_t psw = 0x0000; // Program Status word, contains Accumulator and status flag
 	uint8_t status = 0x00;
@@ -41,56 +41,43 @@ public:
 	uint16_t sp; // These will get initialized later on :-)
 	uint16_t pc;
 
-
+	
 	uint16_t temp = 0x00; // To store temporary data
 
-	bool IntMask = 1;
-
 public:
-	struct
+
+	enum Flags8085 : uint8_t
 	{
-		uint8_t S, Z, X1, AC, X2, P, X3, CY;
+		S = (1 << 7),
+		Z = (1 << 6),
+		X1 = (1 << 5),
+		AC = (1 << 4),
+		X2 = (1 << 3),
+		P = (1 << 2),
+		X3 = (1 << 1),
+		CY = (1 << 0),
 	};
 
-
 private:
-	uint8_t GetFlags();
-	void SetFlags();
+	uint8_t GetFlag(Flags8085 flag);
+	void SetFlag(Flags8085 flag, bool b);
+	void UpdateFlags();
 
 public:
-	enum CarryUpdate : int { Preserve_carry, Update_carry };
-
-	void LogicFlags();
-	void ArthiFlags(uint16_t, CarryUpdate);
-	void UnimplementedInstruction();
-	void Invalid_Instruction();
-	bool Parity(int, int);
-	void Call(uint16_t);
-	void ReturnToCall();
-
-	uint8_t AddByteWtCY(uint8_t, uint8_t, CarryUpdate);
-	uint8_t AddByte(uint8_t, uint8_t, CarryUpdate);
-	uint8_t SubByteWtBR(uint8_t, uint8_t, CarryUpdate);
-	uint8_t SubByte(uint8_t, uint8_t, CarryUpdate);
-
-
-
-
-
-
+	enum CarryUpdate{setcarry, addcarry};
 
 private:
+	uint8_t AddByte(uint8_t, uint8_t, CarryUpdate);
 	enum Interrupts8085 :uint8_t
 	{
 		RST75,
 		RST65,
 		RST55,
 		INTR
-	};
+	}; 
 
 
 public:
-	//***Need to be defined
 	void Irq();
 	void Trap();
 	void clock();
@@ -98,7 +85,7 @@ public:
 
 
 public:
-	void Execute(uint8_t);
+	void Execute();
 	//All the opcodes defined in an enum to easily define the switch statement
 private:
 	enum Instruction
@@ -181,7 +168,7 @@ private:
 		DCR_A,
 		MVI_A_D8,
 		CMC,
-
+	
 		MOV_BB,
 		MOV_BC,
 		MOV_BD,
@@ -332,7 +319,7 @@ private:
 		JMP_ADR,
 		CNZ_ADR,
 		PUSH_B,
-		ADI_D8,
+		ADR_D8,
 		RST_0,
 		RZ,
 		RET,

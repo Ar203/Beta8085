@@ -15,30 +15,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\Bus.cpp">
+    <ClCompile Include="..\Bus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\Cpu.cpp">
+    <ClCompile Include="..\Cpu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\Devices.cpp">
+    <ClCompile Include="..\Devices.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\MotherBoard.cpp">
+    <ClCompile Include="..\MotherBoard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\Bus.h">
+    <ClInclude Include="..\Bus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\Cpu.h">
+    <ClInclude Include="..\Cpu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\Devices.h">
+    <ClInclude Include="..\Devices.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\MotherBoard.h">
+    <ClInclude Include="..\MotherBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

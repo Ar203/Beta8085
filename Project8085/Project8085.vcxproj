@@ -138,16 +138,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\Bus.cpp" />
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\Cpu.cpp" />
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\Devices.cpp" />
-    <ClCompile Include="..\..\..\Beta8085\Beta8085\Beta8085\MotherBoard.cpp" />
+    <ClCompile Include="..\Bus.cpp" />
+    <ClCompile Include="..\Cpu.cpp" />
+    <ClCompile Include="..\Devices.cpp" />
+    <ClCompile Include="..\MotherBoard.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\Bus.h" />
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\Cpu.h" />
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\Devices.h" />
-    <ClInclude Include="..\..\..\Beta8085\Beta8085\Beta8085\MotherBoard.h" />
+    <ClInclude Include="..\Bus.h" />
+    <ClInclude Include="..\Cpu.h" />
+    <ClInclude Include="..\Devices.h" />
+    <ClInclude Include="..\MotherBoard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

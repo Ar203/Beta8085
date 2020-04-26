@@ -10,18 +10,28 @@ int main()
 
 	cpu8085 cpu;
 
-	uint8_t Ak;
-	uint8_t Bk;
+	std::array<uint8_t, 50> code;
 
-	uint16_t Ck;
+	code[0] = 0x06;
+	code[1] = 0x80;
+	code[2] = 0x0E;
+	code[3] = 0x00;
+	code[4] = 0x0A;
+	code[5] = 0xA0;
+	code[6] = 0x34;
+	code[7] = 0x2F;
+	code[8] = 0x76;
 
+	uint16_t Addr = 0x0000;
+	for (auto i : code)
+	{
+		cpu.cpuWrite(Addr, i);
+		Addr++;
+	}
 
-	Ak = 0xFF;
-	Bk = 0xFE;
-	
-	std::cout << ((Ak << 8) + Bk) << std::endl;
-	std::cout << "Arpit" << std::endl;
+	uint8_t data = cpu.cpuRead(0x0000, false);
 
-	
+	cpu.Execute(data);
+
 	return 0;
 }
