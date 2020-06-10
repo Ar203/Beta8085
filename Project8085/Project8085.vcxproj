@@ -141,13 +141,12 @@
     <ClCompile Include="..\src\Bus.cpp" />
     <ClCompile Include="..\src\Cpu.cpp" />
     <ClCompile Include="..\src\Devices.cpp" />
-    <ClCompile Include="..\src\MotherBoard.cpp" />
+    <ClCompile Include="..\src\Console.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Bus.h" />
     <ClInclude Include="..\src\Cpu.h" />
     <ClInclude Include="..\src\Devices.h" />
-    <ClInclude Include="..\src\MotherBoard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

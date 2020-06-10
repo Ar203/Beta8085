@@ -1,6 +1,4 @@
-#ifndef BUS_H
-#define BUS_H
-
+#pragma once
 
 #include "Devices.h"
 
@@ -20,4 +18,3 @@ public:
 
 };
 
-#endif

@@ -1,9 +1,9 @@
+#pragma once
+
 #include<array>
 #include<cstdint>
 
 
-#ifndef DEVICES_H
-#define DEVICES_H
 
 
 class Ram
@@ -17,5 +17,4 @@ public:
 	void Reset();
 };
 
-#endif // !DEVICES_H
 

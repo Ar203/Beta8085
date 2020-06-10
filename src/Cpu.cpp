@@ -1,7 +1,6 @@
 #include"Cpu.h"
 #include<iostream>
-#include<iomanip>
-void Print(cpu8085*);
+
 
 cpu8085::cpu8085()
 {
@@ -179,7 +178,7 @@ void cpu8085::Invalid_Instruction()
 
 void cpu8085::Execute(uint8_t opcode)
 {
-	Print(this);
+	//Print(this);
 	int count = 0;
 	switch (opcode)
 	{
@@ -1412,20 +1411,4 @@ void cpu8085::Execute(uint8_t opcode)
 	}
 
 }
-
-void Print(cpu8085* C)
-{
-	std::cout << "\n\n";
-	std::cout << std::hex << "PC: " << "0x" << int(1 + C->pc) << ",  SP: " << "0x" << int(C->sp) << std::endl;
-	auto psw = (C->A << 8 | C->status);
-	auto BC = (C->B << 8 | C->C);
-	auto DE = (C->D << 8 | C->E);
-	auto HL = (C->H << 8 | C->E);
-	std::cout << std::hex << "psw: " << "0x" << psw << std::endl;
-	std::cout << std::hex << "BC: " << "0x" << BC << std::endl;
-	std::cout << std::hex << "DE: " << "0x" << DE << std::endl;
-	std::cout << std::hex << "HL: " << "0x" << HL << std::endl;
-
-}
-
 

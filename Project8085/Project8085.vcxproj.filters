@@ -15,7 +15,7 @@
     <ClCompile Include="..\src\Devices.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\MotherBoard.cpp">
+    <ClCompile Include="..\src\Console.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -27,9 +27,6 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Devices.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\MotherBoard.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
