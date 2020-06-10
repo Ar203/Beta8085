@@ -16,6 +16,9 @@ public:
 
 	uint8_t cpuRead(uint16_t, bool);
 	void cpuWrite(uint16_t, uint8_t);
+	uint8_t cpuRead(uint16_t, int,bool);
+	void cpuWrite(uint16_t, uint8_t,bool);
+
 
 	void ConnectBus(Bus*);
 
@@ -89,10 +92,7 @@ private:
 
 
 public:
-	//***Need to be defined
-	void Irq();
-	void Trap();
-	void clock();
+
 	void Reset();
 
 

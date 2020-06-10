@@ -17,4 +17,16 @@ public:
 	void Reset();
 };
 
+class IODevice
+{
+public:
+	std::array<uint8_t, 4> out;
+	std::array<uint8_t, 4> in;
+public:
+	IODevice();
+	~IODevice();
+
+	void Reset();
+};
+
 

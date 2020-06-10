@@ -27,6 +27,17 @@ void cpu8085::cpuWrite(uint16_t addr, uint8_t data)
 	bus->write(addr, data);
 }
 
+uint8_t cpu8085::cpuRead(uint16_t addr, int i = 0, bool bIO_Operation = false)
+{
+	return (bus->read(addr, bool(i), bIO_Operation));
+}
+
+void cpu8085::cpuWrite(uint16_t addr, uint8_t data, bool bIO_Opeation)
+{
+	bus->write(addr, data, bIO_Opeation);
+}
+
+
 
 
 
@@ -1081,7 +1092,12 @@ void cpu8085::Execute(uint8_t opcode)
 		}
 		break;
 	case(OUT_D8):
-		UnimplementedInstruction();
+	{
+		uint16_t addr;
+		addr = cpuRead(++pc, false);
+		cpuWrite(addr, A, true);
+	}
+		
 		break;
 	case(CNC_ADR):
 		if (CY != 1)
@@ -1132,7 +1148,12 @@ void cpu8085::Execute(uint8_t opcode)
 		}
 		break;
 	case(IN_D8):
-		UnimplementedInstruction();
+	{
+		uint16_t addr;
+		addr = cpuRead(++pc, false);
+		cpuRead(addr, 0, true);
+	}
+
 		break;
 	case(CC_ADR):
 		if (CY == 1)
