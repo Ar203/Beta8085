@@ -15,9 +15,6 @@
     <ClCompile Include="..\src\Devices.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Console.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="module8085.cpp">
       <Filter>src</Filter>
     </ClCompile>

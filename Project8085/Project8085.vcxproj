@@ -143,7 +143,6 @@
     <ClCompile Include="..\src\Bus.cpp" />
     <ClCompile Include="..\src\Cpu.cpp" />
     <ClCompile Include="..\src\Devices.cpp" />
-    <ClCompile Include="..\src\Console.cpp" />
     <ClCompile Include="module8085.cpp" />
   </ItemGroup>
   <ItemGroup>
