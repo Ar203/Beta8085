@@ -71,9 +71,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\siddh\Desktop\MainAssets\dev\godot\core;C:\Users\siddh\Desktop\Project8085\Project8085\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\siddh\Desktop\MainAssets\dev\godot\core;C:\Users\siddh\Desktop\Project8085\Project8085\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,11 +144,13 @@
     <ClCompile Include="..\src\Cpu.cpp" />
     <ClCompile Include="..\src\Devices.cpp" />
     <ClCompile Include="..\src\Console.cpp" />
+    <ClCompile Include="module8085.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Bus.h" />
     <ClInclude Include="..\src\Cpu.h" />
     <ClInclude Include="..\src\Devices.h" />
+    <ClInclude Include="module8085.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

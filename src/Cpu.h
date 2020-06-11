@@ -1,7 +1,6 @@
 #pragma once
-
-
 #include"Bus.h"
+#include<vector>
 
 
 
@@ -55,7 +54,7 @@ public:
 	};
 
 
-private:
+public:
 	uint8_t GetFlags();
 	void SetFlags();
 
@@ -74,6 +73,14 @@ public:
 	uint8_t AddByte(uint8_t, uint8_t, CarryUpdate);
 	uint8_t SubByteWtBR(uint8_t, uint8_t, CarryUpdate);
 	uint8_t SubByte(uint8_t, uint8_t, CarryUpdate);
+
+
+
+public:
+	//Some error handling
+	std::vector<std::string> error;
+	std::vector<std::string> GetErrors();
+	void SetErrors(std::string);
 
 
 
@@ -97,7 +104,7 @@ public:
 
 
 public:
-	void Execute(uint8_t);
+	void Execute(uint8_t, bool);
 	//All the opcodes defined in an enum to easily define the switch statement
 private:
 	enum Instruction

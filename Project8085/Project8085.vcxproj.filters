@@ -18,6 +18,9 @@
     <ClCompile Include="..\src\Console.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="module8085.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Bus.h">
@@ -27,6 +30,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Devices.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="module8085.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

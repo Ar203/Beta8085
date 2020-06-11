@@ -169,28 +169,35 @@ void cpu8085::Call(uint16_t Addr)
 
 void cpu8085::UnimplementedInstruction()
 {
-	printf("Unused Opcode, Defination does not exist");
+	SetErrors("Unused Opcode, Defination does not exist\n");
 };
 
 void cpu8085::Invalid_Instruction()
 {
-	printf("Non Existing Opcode");
+	SetErrors("Non Existing Opcode\n");
 };
 
-
-
-
-
-
-
-
-
-
-
-void cpu8085::Execute(uint8_t opcode)
+void cpu8085::SetErrors(std::string str)
 {
-	//Print(this);
-	int count = 0;
+	error.push_back(str);
+	return;
+};
+
+std::vector<std::string> cpu8085::GetErrors()
+{
+	if (!error.empty())
+		return error;
+}
+
+
+
+
+
+
+
+void cpu8085::Execute(uint8_t opcode, bool StepbyStep = false)
+{
+
 	switch (opcode)
 	{
 
@@ -1151,7 +1158,7 @@ void cpu8085::Execute(uint8_t opcode)
 	{
 		uint16_t addr;
 		addr = cpuRead(++pc, false);
-		cpuRead(addr, 0, true);
+		A = cpuRead(addr, 0, true);
 	}
 
 		break;
@@ -1423,13 +1430,6 @@ void cpu8085::Execute(uint8_t opcode)
 	}
 
 	SetFlags();
-
-	count++;
-	if (count < 50)
-	{
-
-		Execute(cpuRead(++pc, false));
-	}
 
 }
 
